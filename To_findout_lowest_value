@@ -1,13 +1,18 @@
-# To_findout_lowest_value
-It is a function code to find out the lowest value with a specific variable
+## To_findout_lowest_value
+## It is a function code to find out the lowest value with a specific variable
 
+## First, we need to install package named "tidyverse" and "dplyr" ##
 install.packages("tidyverse", dependencies = TRUE)
 install.packages("dplyr", dependencies = TRUE)
 head(Sample_data)
 
-
+## Then, we need to load the package using library ##
 library(dplyr)
 library(tidyverse)
+
+## Here, "GDP Growth Rate" = column name, "Region" = column name, "Sample_data" = complete dataset,
+"%>%" = pipe line, "Country Name" = column name, "result" contains the output ##
+
 Lowest <- function(`GDP Growth Rate` = "", region = "") {
   if(region == "") {
     result <- Sample_data %>%
@@ -22,5 +27,6 @@ Lowest <- function(`GDP Growth Rate` = "", region = "") {
   result
 }
 
+## "Lowest" provides the desired output ##
 my_answer <- Lowest("GDP Growth Rate", "EU")
 my_answer
